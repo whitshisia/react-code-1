@@ -13,7 +13,7 @@ function AccountContainer() {
 
   const fetchTransactions = async () => {
     try {
-      const response = await fetch("http://localhost:8001/transactions");
+      const response = await fetch("https://react-code-1.onrender.com/transactions");
       const data = await response.json();
       setTransactions(data);
       setFilteredTransactions(data);
@@ -24,7 +24,7 @@ function AccountContainer() {
 
   const addTransaction = async (newTransaction) => {
     try {
-      const response = await fetch("http://localhost:8001/transactions", {
+      const response = await fetch("https://react-code-1.onrender.com/transactions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,7 +41,7 @@ function AccountContainer() {
 
   const deleteTransaction = async (id) => {
     try {
-      await fetch(`http://localhost:8001/transactions/${id}`, {
+      await fetch(`https://react-code-1.onrender.com/transactions/${id}`, {
         method: "DELETE",
       });
       const updatedTransactions = transactions.filter(
